@@ -1,5 +1,5 @@
 let local = localStorage
-const getItem = ( ) =>{
+const getItem = () =>{
     let inp = document.querySelector('input')
 if (inp.value !== "" && !inp.value.includes("")) {
     let data ={
@@ -9,8 +9,14 @@ if (inp.value !== "" && !inp.value.includes("")) {
     let get_data = local.getItem("user_info")
     get_data = JSON.parse(get_data)
 }else{
-    alert(4)
+    alert("iltimos bosh joyni toldiring")
 }
 
 
+}
+let heading =document.querySelector('h1')
+heading.innerHTML =JSON.parse(local["user-name"]).name
+
+const remoData = () =>{
+    local.removeItem('user-name')
 }
